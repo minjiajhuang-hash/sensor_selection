@@ -23,7 +23,7 @@ class Environment:
         self.ambient_temp = config_.get("ambient_temp", 293.15)
         self.sky_temp = config_.get("sky_temp", 253.15)
         self.sim_time = config_.get("time_of_day", "12:00:00")
-        self.thermal = ThermalManager(ambient_K=self.ambient_temp, T_sky=self.sky_temp, time_of_day=self.sim_time)
+        self.thermal = ThermalManager(ambient_K=self.ambient_temp, T_sky=self.sky_temp, time_of_day=self.sim_time, physics_client=self.client_id)
 
 
         # Load the Terrain
@@ -33,8 +33,8 @@ class Environment:
             return
         with open(terrain_json, 'r') as file:
             self.terrain_config = json.safe_load(file)
-        terrain_file = os.path.join(base_dir,os.path.normpath(self.terrain_config["Layered Surface"]["Mesh"]))
         base_dir = os.getcwd()
+        terrain_file = os.path.join(base_dir,os.path.normpath(self.terrain_config["Layered Surface"]["Mesh"]))
         self.load_terrain(terrain_file, base_dir)
         print(f"Loading the terrain: {ph.GREEN}COMPLETE{ph.RESET}")
 
@@ -120,8 +120,7 @@ class Environment:
         p.changeVisualShape(self.terrain['terrain'], -1, textureUniqueId=tex_id)
         p.changeVisualShape(self.terrain['terrain'], -1, rgbaColor=[1,1,1,1], specularColor=[0.1,0.1,0.1])
 
-        self.thermal.register_body(terrain_id, config_file, per_link=False)
-        self.thermal.register_body(tex_id, texture_file_name, per_link=False)
+        self.thermal.register_body(self.terrain['terrain'], config_file, per_link=False)
 
     def load_features(self, base_dir):
         for idx, feat in enumerate(self.terrain_config["Surface Mesh"]):
