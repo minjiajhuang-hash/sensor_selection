@@ -2,7 +2,7 @@ from direct.showbase import DirectObject, ShowBase
 from direct.task import Task
 import numpy as np
 from scipy.spatial.transform import Rotation
-from panda3d.core import PNMImage, PNMImageHeader, DisplayRegion
+from panda3d.core import Filename, PNMImage, PNMImageHeader, DisplayRegion
 import datetime
 from PIL import Image
 import os
@@ -148,37 +148,31 @@ class CameraControls(DirectObject.DirectObject):
         if self.old_index == 0:
             base.camera.detachNode()
         elif self.old_index:
-            self.world.camera_list[self.old_index].display_region.setActive(False)
+            old_camera = self.world.camera_list[self.old_index]
+            old_camera.display_region.setActive(False)
+            set_overlay_visible = getattr(old_camera, "set_overlay_visible", None)
+            if set_overlay_visible is not None:
+                set_overlay_visible(False)
 
         if self.camera_index == 0:    
             base.camera.reparentTo(self.world.render)
         else:
-            self.world.camera_list[self.camera_index].display_region.setActive(True)
+            new_camera = self.world.camera_list[self.camera_index]
+            new_camera.display_region.setActive(True)
+            set_overlay_visible = getattr(new_camera, "set_overlay_visible", None)
+            if set_overlay_visible is not None:
+                set_overlay_visible(True)
 
-    def save_current_camera_image(self, camera_list_index: int) -> None:
-        """_summary_
-        Takes in the current camera view index, and from it's DisplayRegion, capture a PMN Image.
-        Args:
-            camera_list_index (int): _description_
-        """
-        
-        print(f"Print screen was called on {camera_list_index}")
-        print(f"Index was {self.camera_index}")
-        print(f"List is {self.world.camera_list}")
-        
-        if camera_list_index == 0:
-            image_to_save = PNMImage()            
-            base.win.getScreenshot(image_to_save)
-            result = image_to_save.write("\\logs\\buffer\\buffer.ppm")
-        if camera_list_index != 0: # Might grab default camera, which has non of our api!    
-            current_display = self.world.camera_list[camera_list_index].display_region
-
-            image_to_save = PNMImage()            
-            current_display.getScreenshot(image_to_save)
-            result = image_to_save.write("\\logs\\buffer\\buffer.ppm")
-            print(result)
-        
-        export_image_buffer(f"{datetime.datetime.now().strftime("%d-%m-%Y %H.%M.%S")}.png")
+    def save_current_camera_image(self) -> None:
+        """Capture the complete window, including the active thermal legend."""
+        timestamp = datetime.datetime.now().strftime("%d-%m-%Y_%H.%M.%S")
+        output_path = os.path.join("logs", f"{timestamp}.png")
+        image = PNMImage()
+        if not self.world.win.getScreenshot(image):
+            raise RuntimeError("Panda3D could not capture the current camera view")
+        if not image.write(Filename.fromOsSpecific(output_path)):
+            raise RuntimeError(f"Panda3D could not save camera image to {output_path}")
+        print(f"Saved camera image to {output_path}")
             
             
             
