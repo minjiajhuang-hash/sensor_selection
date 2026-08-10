@@ -1,6 +1,6 @@
 import numpy as np
 
-from sim.environment.ThermalObject import ThermalBody
+from sim.environment.thermal_object import ThermalBody
 from sim.rendering.object import RenderableObject
 
 

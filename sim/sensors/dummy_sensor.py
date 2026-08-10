@@ -1,6 +1,6 @@
 """A dummy sensor for testing and creating a sensor"""
 
-from sim.Sensors.sensor import Sensor, SensorType
+from sim.sensors.sensor import Sensor, SensorType
 
 
 class DummySensor(Sensor):

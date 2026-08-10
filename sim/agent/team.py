@@ -1,8 +1,8 @@
 import yaml
 
 import sim.utils.CONSTANTS as ph
-from sim.Agent import agent as AGENT
-from sim.Environment.Thermal.thermal_manager import ThermalManager
+from sim.agent import agent as AGENT
+from sim.environment.thermal.thermal_manager import ThermalManager
 
 
 class Team:

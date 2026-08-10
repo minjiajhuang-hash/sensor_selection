@@ -56,22 +56,22 @@ def load_sensor_from_file(
 
     sensor_type = str(configuration.get("type", "")).lower().replace(" ", "_")
     if sensor_type in {"camera", "eo_camera", "rgb_camera"}:
-        from sim.Sensors.Cameras.eo_camera import EOCamera
+        from sim.sensors.cameras.eo_camera import EOCamera
 
         sensor = EOCamera()
     elif sensor_type in {"ir_camera", "ircamera"}:
-        from sim.Sensors.Cameras.ir_camera import IRCamera
+        from sim.sensors.cameras.ir_camera import IRCamera
 
         sensor = IRCamera(thermal_manager=thermal_mgr)
     elif sensor_type == "microphone":
-        from sim.Sensors.Microphone.microphone import MicrophoneSensor_Uniform
+        from sim.sensors.microphone.microphone import MicrophoneSensor_Uniform
 
         return MicrophoneSensor_Uniform(
             configuration,
             name or configuration.get("name", path.stem),
         )
     elif sensor_type == "dummy":
-        from sim.Sensors.dummy_sensor import DummySensor
+        from sim.sensors.dummy_sensor import DummySensor
 
         sensor = DummySensor()
     else:

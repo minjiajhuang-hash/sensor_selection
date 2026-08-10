@@ -95,5 +95,5 @@ def generate_tree_obj(output_file="lowpoly_tree.obj"):
 
 
 if __name__ == "__main__":
-    output_file = r"generation\Terrain_Generation\terrain_features\lowpoly_tree.obj"
+    output_file = r"generation\terrain_generation\terrain_features\lowpoly_tree.obj"
     generate_tree_obj(output_file)

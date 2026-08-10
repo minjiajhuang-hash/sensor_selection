@@ -18,12 +18,12 @@ sensors:
   DummySensor:
     type: "dummy"
     config_path: .\\"config\\sensors\\dummy_sensor.yaml"
-    model: ".\\assets\\Agents\\Basic Drone\\simple_drone.obj"
+    model: ".\\assets\\agents\\basic drone\\simple_drone.obj"
 sound:
 animation:
 
 model_configs:
-  model: ".\\assets\\Agents\\Generic Quadcopter Drone.obj"
+  model: ".\\assets\\agents\\Generic Quadcopter Drone.obj"
   position: [-10, -20, 0200]
   orientation: [0, 45, 90] # In Yaw, pitch, roll in degrees
   color:

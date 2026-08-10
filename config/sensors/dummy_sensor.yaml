@@ -3,7 +3,7 @@ model: ""
 sensor_id: 6967
 
 model_configs:
-  model: ".\\assets\\Agents\\Generic Quadcopter Drone.obj"
+  model: ".\\assets\\agents\\Generic Quadcopter Drone.obj"
   position: [0, 0, 0]
   orientation:
   color:

@@ -33,7 +33,7 @@ except ImportError as error:
         "Install the demo dependencies with: pip install -r requirements.txt"
     ) from error
 
-from sim.environment.Thermal.thermal_static_object import ThermalStaticObject
+from sim.environment.thermal.thermal_static_object import ThermalStaticObject
 
 demo = None
 
@@ -160,7 +160,7 @@ class ThermalDemo:
             float(elapsed) * self.options.time_scale,
             0.0,
         )
-        steps = max(1, int(math.ceil(simulation_dt / 2.0)))
+        steps = max(1, math.ceil(simulation_dt / 2.0))
         step_dt = simulation_dt / steps
         for _ in range(steps):
             shade = self.cube.sunlight(self.sun_direction)

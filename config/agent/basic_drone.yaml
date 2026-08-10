@@ -1,7 +1,7 @@
 agent: bullet/bullet3/data/Quadrotor/quadrotor.urdf
 sensors:
   sensor_1:
-    file: sim/Sensors/basic_camera.json
+    file: sim/sensors/basic_camera.json
     sensor_pos:
       - 0
       - 0
@@ -11,7 +11,7 @@ sensors:
       - 0
       - 0
   sensor_2:
-    file: sim/Sensors/basic_ir_camera.json
+    file: sim/sensors/basic_ir_camera.json
     sensor_pos:
       - 0
       - 0

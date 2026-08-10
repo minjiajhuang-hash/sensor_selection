@@ -28,7 +28,7 @@ settings:
 
 
 model_configs:
-  model: ".\\assets\\Sensors\\SLR_Camera\\10124_SLR_Camera_SG_V1_Iteration2.obj"
+  model: ".\\assets\\sensors\\slr_camera\\10124_SLR_Camera_SG_V1_Iteration2.obj"
   position: [0, 0, 0]
   orientation: [0, 0, 0]
   color: [0, 0, 100]
