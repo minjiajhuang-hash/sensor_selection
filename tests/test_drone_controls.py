@@ -1,7 +1,7 @@
 from panda3d.core import NodePath, PandaNode
 
-from sim.Agent.agent import Agent
-from sim.Agent.drone_controls import DroneControls
+from sim.agent.agent import Agent
+from sim.agent.drone_controls import DroneControls
 
 
 class FakeTaskManager:

@@ -22,8 +22,8 @@ class WORLD(ShowBase):
 
         yaml_config = extract_yaml_configurations(config_file)
 
-        self.agent_list = list()
-        self.camera_list = [base.camera]
+        self.agent_list = []
+        self.camera_list = [self.camera]
 
         thermal_config = yaml_config.get("thermal", {})
         atmosphere_time = (

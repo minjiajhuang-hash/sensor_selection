@@ -4,7 +4,7 @@ import time
 import numpy as np
 import sounddevice as sd
 
-from sim.Sound.point_source import SoundPointSource
+from sim.sound.point_source import SoundPointSource
 from sim.utils.CONSTANTS import SIM_DT
 
 

@@ -2,7 +2,7 @@ from pathlib import Path
 
 import yaml
 
-from sim.Sensors.Cameras.thermal_legend import ThermalLegend
+from sim.sensors.cameras.thermal_legend import ThermalLegend
 
 ROOT = Path(__file__).resolve().parents[1]
 

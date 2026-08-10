@@ -38,7 +38,7 @@ while ~stopFeatures
         % Ask about the desired feature
         feature = input(terrain_options, 's');
         if strcmpi(feature,'m')
-            PATH = fullfile(pwd,"terrain_type/Mountain/");
+            PATH = fullfile(pwd,"terrain_type/mountain/");
             % Adding a mountain
             if debug_mode
                 filename = fullfile(PATH,"Mountain_5Peaks_200Height_0Seed_debug");

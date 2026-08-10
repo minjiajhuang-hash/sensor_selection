@@ -2,7 +2,7 @@ import numpy as np
 import pybullet as p
 from scipy.spatial.transform import Rotation as Rot
 
-from sim.Sensors.sensor import Sensor
+from sim.sensors.sensor import Sensor
 from sim.utils.CONSTANTS import SIM_DT, SPEED_OF_SOUND
 
 

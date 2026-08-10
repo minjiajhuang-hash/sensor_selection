@@ -7,8 +7,8 @@ import pybullet as p
 from scipy.spatial.transform import Rotation as Rot
 
 import sim.utils.CONSTANTS as ph
-from sim.Environment.Thermal.thermal_manager import ThermalManager
-from sim.Sensors.sensor import load_sensor_from_file
+from sim.environment.thermal.thermal_manager import ThermalManager
+from sim.sensors.sensor import load_sensor_from_file
 from sim.utils.CONSTANTS import SIM_DT
 
 
@@ -44,7 +44,7 @@ class Agent:
             self._init_sound(sound=sound_cfg)
 
     def _init_sound(self, sound):
-        from sim.Sound.point_source import SoundPointSource
+        from sim.sound.point_source import SoundPointSource
 
         self.sound = SoundPointSource(
             sound_file=sound,

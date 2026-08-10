@@ -5,7 +5,7 @@ try:
 except ImportError:
     p = None
 
-from sim.environment.ThermalObject import ThermalObject
+from sim.environment.thermal_object import ThermalObject
 
 
 class ThermalStaticObject(ThermalObject):

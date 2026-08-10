@@ -13,7 +13,7 @@ settings:
 sensors: {}
 
 model_configs:
-  model: ".\\assets\\Agents\\Generic Drone\\Generic Quadcopter Drone.obj"
+  model: ".\\assets\\agents\\generic drone\\Generic Quadcopter Drone.obj"
   position: [0.0, 45.0, 40.0]
   orientation: [0.0, 0.0, 0.0]
   color: [255, 70, 40]

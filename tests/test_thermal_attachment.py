@@ -1,7 +1,7 @@
 import unittest
 
-from sim.Environment.Thermal.thermal_manager import ThermalManager
-from sim.Environment.ThermalObject import ThermalBody, ThermalObject
+from sim.environment.thermal.thermal_manager import ThermalManager
+from sim.environment.thermal_object import ThermalBody, ThermalObject
 
 
 class ExampleThermalBody(ThermalBody):

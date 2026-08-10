@@ -108,8 +108,8 @@ If there are errors, they are most like to the issues displayed below:
 | DO | DON'T |
 | -------- | --------- |
 | `./sim/loader/agent_loader.py` | `~/Programs/sim/loader/agent_loader.py` |
-| `./assets/Agent/Generic Drone` | `"./assets/Agent/Generic Drone"` |
-| `.\\assets\\Sounds\\quadcopter.mp3`| `.\\assets\\Sounds\\quadcopter.mp3` |
+| `./assets/agents/generic drone` | `"./assets/agents/generic drone"` |
+| `.\\assets\\sounds\\quadcopter.mp3`| `.\\assets\\sounds\\quadcopter.mp3` |
 
 ## Assets
 

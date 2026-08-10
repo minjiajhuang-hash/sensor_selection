@@ -1,13 +1,13 @@
 Object Labels: labels.json
 Layered Surface:
-  Mesh: assets/Terrain/terrain_type/Mountain/Mountain_8Peaks_150Height_42Seed.asc
+  Mesh: assets/terrain/terrain_type/mountain/Mountain_8Peaks_150Height_42Seed.asc
   Scale:
     - 1
     - 1
     - 1
   Texture: assets/textures/rock.jpg
 Surface Mesh:
-  - Mesh: assets/Terrain/terrain_type/Mountain/Mountain_8Peaks_150Height_42Seed.asc
+  - Mesh: assets/terrain/terrain_type/mountain/Mountain_8Peaks_150Height_42Seed.asc
     Rotate Y to Z: false
     YawPitchRoll:
       - 0
@@ -21,8 +21,8 @@ Surface Mesh:
       - 1
       - 1
       - 1
-  - Mesh: assets/Terrain/terrain_features/tree_trunk.urdf
-  - Mesh: assets/Terrain/terrain_features/tree_trunk.obj
+  - Mesh: assets/terrain/terrain_features/tree_trunk.urdf
+  - Mesh: assets/terrain/terrain_features/tree_trunk.obj
     Rotate Y to Z: false
     YawPitchRoll:
       - 0

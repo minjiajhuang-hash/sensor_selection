@@ -38,7 +38,7 @@ Run validation:
 
 ```powershell
 python -m pytest -q
-python sim\Environment\Thermal\thermal_sanity_check.py
+python sim\environment\thermal\thermal_sanity_check.py
 ```
 
 ## Controls
